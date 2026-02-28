@@ -1,0 +1,22 @@
+{% extends 'base_app.html' %}
+
+{% block page_title %}
+    Relatórios
+{% endblock %}
+
+{% block nav %}
+    <a href="{% url 'dashboard:app_dashboard' %}">Dashboard</a>
+    <a href="{% url 'colaboradores:app_users' %}">Colaboradores</a>
+    <a href="{% url 'equipamentos:app_items' %}">Equipamentos</a>
+    <a href="{% url 'emprestimos:app_requests' %}">Empréstimos</a>
+    <a href="{% url 'historico:app_history' %}">Movimentações</a>
+    <a href="{% url 'relatorios:app_reports' %}" class="active">Relatórios</a>
+    <a href="{% url 'app_configs' %}">Configurações</a>
+    {% endblock %}
+
+{% block content %}
+    <div class="page-header">
+        <h2>Relatórios</h2>
+        <a href="{% url 'relatorios:download_movimentacoes_csv' %}" class="btn-add">Download CSV de Movimentações</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Estoque de EPI{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+</head>
+<header>
+
+</header>
+
+<body>
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="{% static 'capacete.png' %}" alt="logo">
+      <h1>Sistema de Gestão de EPIs</h1>
+    </div>
+    <nav class="menu">
+      <a href="{% url 'dashboard:app_dashboard' %}"
+        class="{% if request.resolver_match.url_name == 'app_dashboard' %}active{% endif %}">Dashboard</a>
+      <a href="{% url 'colaboradores:app_users' %}"
+        class="{% if 'users' in request.resolver_match.url_name %}active{% endif %}">Colaboradores</a>
+      <a href="{% url 'equipamentos:app_items' %}"
+        class="{% if 'items' in request.resolver_match.url_name %}active{% endif %}">Equipamentos</a>
+      <a href="{% url 'emprestimos:app_requests' %}"
+        class="{% if 'requests' in request.resolver_match.url_name %}active{% endif %}">Empréstimos</a>
+      <a href="{% url 'historico:app_history' %}"
+        class="{% if 'history' in request.resolver_match.url_name %}active{% endif %}">Movimentações</a>
+      <a href="{% url 'relatorios:app_reports' %}"
+        class="{% if 'reports' in request.resolver_match.url_name %}active{% endif %}">Relatórios</a>
+      <a href="{% url 'app_configs' %}"
+        class="{% if 'configs' in request.resolver_match.url_name %}active{% endif %}">Configurações</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="topbar">
+      <h2 id="page-title">{% block page_title %}Dashboard{% endblock %}</h2>
+
+      <div class="user">
+        <div class="user-icon">👤</div>
+        <strong>{{ request.user.username }}</strong>
+
+        <!-- Botão de Logout fica aqui -->
+        <form method="post" action="{% url 'logout' %}" style="display: inline; margin-left: 5px;">
+          {% csrf_token %}
+          <button type="submit" class="btn-logout">(Sair)</button>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="page-content">
+      {% if messages %}
+      <div class="messages-container-global">
+          {% for message in messages %}
+          <div class="message {{ message.tags }}">
+              {{ message }}
+          </div>
+          {% endfor %}
+      </div>
+      <style>
+          .messages-container-global {
+              width: 100%;
+              text-align: center;
+              margin-bottom: 20px;
+              position: fixed;
+              top: 80px; /* Adjust based on topbar height */
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 1000;
+              pointer-events: none; /* Allow clicking through container */
+          }
+      
+          .message {
+              padding: 15px 25px;
+              border-radius: 5px;
+              color: #fff;
+              display: inline-block;
+              font-weight: bold;
+              margin-bottom: 10px;
+              box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+              pointer-events: auto; /* Re-enable clicking on messages */
+          }
+      
+          .message.success {
+              background-color: #28a745;
+          }
+      
+          .message.error {
+              background-color: #dc3545;
+          }
+          
+          .message.warning {
+              background-color: #ffc107;
+              color: #000;
+          }
+          
+          .message.info {
+              background-color: #17a2b8;
+          }
+      </style>
+      <script>
+          document.addEventListener('DOMContentLoaded', (event) => {
+              const messageContainer = document.querySelector('.messages-container-global');
+              if (messageContainer) {
+                  setTimeout(() => {
+                      messageContainer.style.transition = 'opacity 0.5s ease';
+                      messageContainer.style.opacity = '0';
+                      setTimeout(() => {
+                          messageContainer.style.display = 'none';
+                      }, 500);
+                  }, 3000); 
+              }
+          });
+      </script>
+      {% endif %}
+
+      {% block content %}
+      {% endblock %}
+    </div>
+  </main>
+</body>
+<footer>
+
+</footer>
+
+</html>

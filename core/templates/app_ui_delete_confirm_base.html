@@ -1,0 +1,20 @@
+{% extends 'base_app.html' %}
+
+{% block page_title %}
+Confirmar Exclusão
+{% endblock %}
+
+{% block content %}
+<h2>Confirmar Exclusão</h2>
+
+<p>Você tem certeza que deseja excluir <strong>"{{ item.nome }}"</strong>?</p>
+<p>Esta ação não pode ser desfeita.</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-actions">
+        <button type="submit" class="btn-delete">Sim, excluir</button>
+        <a href="javascript:history.back()" class="btn-cancel">Cancelar</a>
+    </div>
+</form>
+{% endblock %}
