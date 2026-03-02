@@ -26,7 +26,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'glacial', sans-serif;
-    background-color: #ffffff;
+    background-color: #eef4ff;
 }
 
 /* ---------------------------------------------------------
@@ -55,6 +55,7 @@ html, body {
     justify-content: center;
     padding: 40px;
     box-sizing: border-box;
+    background-color: #f7fbff;
 }
 
 /* ---------------------------------------------------------
@@ -74,7 +75,7 @@ html, body {
     margin-bottom: 40px;
     font-size: 32px;
     font-weight: bold;
-    color: #000;
+    color: #123c74;
 }
 
 /* ---------------------------------------------------------
@@ -91,22 +92,23 @@ html, body {
 .input-group label {
     margin-bottom: 10px;
     font-size: 16px;
-    color: #000;
+    color: #123c74;
 }
 
 /* Novo estilo — caixas limpas e modernas */
 .input-group input {
     padding: 12px 14px;
     font-size: 16px;
-    border: 2px solid #000;
+    border: 2px solid #aac2e6;
     border-radius: 25px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     transition: 0.2s ease;
 }
 
 .input-group input:focus {
     background-color: #ffffff;
-    border-color: #333;
+    border-color: #1f5ea8;
+    box-shadow: 0 0 0 2px rgba(31, 94, 168, 0.15);
     outline: none;
 }
 
@@ -124,9 +126,9 @@ html, body {
 /* Botão principal */
 .submit-btn {
     padding: 12px 22px;
-    background-color: #fff;
-    color: #000;
-    border: 2px solid #000;
+    background-color: #1f5ea8;
+    color: #fff;
+    border: 2px solid #1f5ea8;
     border-radius: 25px;
     font-size: 15px;
     cursor: pointer;
@@ -134,7 +136,8 @@ html, body {
 }
 
 .submit-btn:hover {
-    background-color: #000;
+    background-color: #174a84;
+    border-color: #174a84;
     color: #fff;
 }
 
@@ -146,12 +149,13 @@ html, body {
 .crt_login_btn {
     font-size: 15px;
     text-decoration: none;
-    color: #000;
+    color: #1f5ea8;
     transition: 0.2s ease;
 }
 
 .forgot-password:hover,
 .crt_login_btn:hover {
+    color: #10335e;
     font-weight: bold;
     transition: 0.2s ease;
 }

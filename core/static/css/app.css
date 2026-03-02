@@ -7,7 +7,8 @@ body {
 
   font-family: Arial, sans-serif;
 
-  background-color: #f6f6f6;
+  background-color: #eef4ff;
+  color: #102a52;
 }
 
 .sidebar {
@@ -19,7 +20,7 @@ body {
   padding-top: 20px;
   padding: 10px 20px;
   
-  border-right: 2px solid #ddd;
+  border-right: 2px solid #c7d8f3;
 
   background-color: #fff;
 }
@@ -65,22 +66,22 @@ body {
   width: 85%;
   padding: 10px 20px;
 
-  border: 2px solid #000;
+  border: 2px solid #1f5ea8;
   border-radius: 25px;
   font-size: 16px;
   text-decoration: none;
   transition: 0.2s;
 
-  background-color: #fff;
-  color: #000;
+  background-color: #f7fbff;
+  color: #123c74;
 }
 
 .menu a:hover {
-  background-color: #f0f0f0;
+  background-color: #e8f1ff;
 }
 
 .menu a.active {
-  background-color: #000;
+  background-color: #1f5ea8;
   color: #fff;
 }
 
@@ -114,8 +115,10 @@ body {
   width: 60px;
   height: 60px;
 
-  border: 2px solid #000;
+  border: 2px solid #1f5ea8;
   border-radius: 50%;
+  background-color: #f2f7ff;
+  color: #1f5ea8;
   font-weight: bold;
 }
 
@@ -124,7 +127,7 @@ body {
 
   padding: 20px;
 
-  border: 2px solid #000;
+  border: 2px solid #bfd2ef;
   border-radius: 10px;
   
   background-color: #fff;
@@ -141,18 +144,19 @@ th, td {
   text-align: left;
   padding: 10px;
   
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #d3e1f7;
 }
 
 th {
-  background-color: #f0f0f0;
+  background-color: #e9f2ff;
+  color: #123c74;
 }
 
 /*/Estilo do botao adicionar /*/
 .btn-add {
   padding: 10px 20px;
   display: inline-block;
-  background-color: #1F497D;
+  background-color: #1f5ea8;
   color: white;
   border: none;
   border-radius: 5px;
@@ -165,12 +169,12 @@ th {
 }
 
 .btn-add:hover {
-  background-color: #15375E;
+  background-color: #174a84;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-add:active {
-  background-color: #0A1C36;
+  background-color: #10335e;
   transform: translateY(1px);
   box-shadow: none;
 }
@@ -179,7 +183,7 @@ th {
 .btn-edit {
   padding: 5px 10px; /* Um pouco menor, adequado para acoes em linha */
   display: inline-block;
-  background-color: #1F497D;
+  background-color: #1f5ea8;
   color: white;
   border: none;
   border-radius: 3px; /* Cantos levemente menores */
@@ -193,12 +197,12 @@ th {
 }
 
 .btn-edit:hover {
-  background-color: #15375E;
+  background-color: #174a84;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra menor */
 }
 
 .btn-edit:active {
-  background-color: #0A1C36;
+  background-color: #10335e;
   transform: translateY(1px);
   box-shadow: none;
 }
@@ -234,7 +238,7 @@ th {
   /* Estilo Base para o Botão Salvar (Azul Escuro) */
   padding: 8px 15px;
   display: inline-block;
-  background-color: #1F497D; 
+  background-color: #1f5ea8; 
   color: white;
   border: none;
   border-radius: 4px; /* Levemente arredondado */
@@ -248,12 +252,12 @@ th {
 }
 
 .btn-save:hover {
-  background-color: #15375E; /* Azul mais escuro no hover */
+  background-color: #174a84; /* Azul mais escuro no hover */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-save:active {
-  background-color: #0A1C36; /* Azul no clique */
+  background-color: #10335e; /* Azul no clique */
   transform: translateY(1px);
   box-shadow: none;
 }
@@ -263,7 +267,7 @@ th {
   padding: 8px 10px; /* Padding leve para dar área de clique */
   display: inline-block;
   background: none; /* Sem cor de fundo */
-  color: #1F497D; /* Usa o azul primário para o texto do link */
+  color: #1f5ea8; /* Usa o azul primário para o texto do link */
   border: none;
   font-family: Arial, sans-serif;
   font-size: 15px;
@@ -274,7 +278,7 @@ th {
 }
 
 .btn-cancel:hover {
-  color: #0A1C36; /* Azul bem escuro no hover */
+  color: #10335e; /* Azul bem escuro no hover */
   text-decoration: none; /* Remove o sublinhado no hover */
 }
 
@@ -307,7 +311,7 @@ th {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #333;
+  color: #123c74;
 }
 
 /* Estilo dos Inputs (Caixas de texto) */
@@ -315,17 +319,24 @@ th {
 .form-container input[type="text"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #aac2e6;
   border-radius: 4px;
   box-sizing: border-box; /* Garante que o padding não quebre a largura */
   font-size: 14px;
+}
+
+.form-container input[type="password"]:focus,
+.form-container input[type="text"]:focus {
+  border-color: #1f5ea8;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(31, 94, 168, 0.15);
 }
 
 /* Estilo para os textos de ajuda do Django (ex: "A senha deve ter 8 caracteres") */
 .helptext {
   display: block;
   font-size: 12px;
-  color: #666;
+  color: #4f6f9d;
   margin-top: 4px;
 }
 
@@ -343,7 +354,7 @@ th {
 .btn-logout {
   background: none;
   border: none;
-  color: #8B0000; /* Vermelho escuro */
+  color: #1f5ea8;
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
@@ -354,5 +365,5 @@ th {
 
 .btn-logout:hover {
   text-decoration: underline;
-  color: #ff0000;
+  color: #10335e;
 }
